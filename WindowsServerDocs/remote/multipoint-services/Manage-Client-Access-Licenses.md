@@ -24,6 +24,25 @@ If you are using station virtual desktops instead of physical stations, you must
 2.  From the **Start** screen, open **MultiPoint Manager**.  
   
 3.  Click the **Home** tab, and then click **Add client access licenses**.  This will open the management tool for CAL licensing.
+
+
+
+# Set the licensing mode
+If licensing is not configured properly the set-up will prompt with a notification about the grace period being expired. Follow these steps to configure the licensing mode on the server running MultiPoint Services.
+
+1. Launch Local Group Policy Editor (gpedit.msc).
+
+2. In the left pane, navigateto Local Computer Policy->Computer Configuration->Administrative Templates->Windows Components->Remote Desktop Services->Remote Desktop Session Host->Licensing
+
+3. In the right pane, right click Use the specified Remote Desktop license servers and select Edit
+ - In the group policy editor dialog, select Enabled
+ - Enter the local computer name in the License servers field to use.
+ - Select OK
   
+4. In the right pane, right click Set the Remote Desktop licensing mode and select Edit
+- In the group policy editor dialog, select Enabled
+- Set the Licensing mode to Per Device/Per User
+- Select OK
+  
 ## See Also  
 [Manage System Tasks Using MultiPoint Manager](Manage-System-Tasks-Using-MultiPoint-Manager.md)
